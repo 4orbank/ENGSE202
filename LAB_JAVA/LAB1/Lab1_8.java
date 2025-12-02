@@ -7,16 +7,17 @@ public class Lab1_8 {
 	public static void main(String[] args) {
 		Scanner Fuckinggod = new Scanner(System.in);
 		
-		System.out.print("Enter the number of integers : ");
+	try {
+		System.out.print("Enter the integers : ");
         int N = Fuckinggod.nextInt();
         
         if (N <= 0) {
-            System.out.println("Error: N must be a positive integer.");
+            System.out.println("Err: pls enter positive integer.");
         } else {
             int[] nb = new int[N];
 
             for (int i = 0; i < N; i++) {
-                System.out.print("Enter number " + (i + 1) + ": ");
+                System.out.print("Enter numbers " + (i + 1) + ": ");
                 nb[i] = Fuckinggod.nextInt();
             }
 
@@ -29,6 +30,11 @@ public class Lab1_8 {
 
             System.out.println("Maximum value = " + maxvalue);
         }
+        
+		} catch (InputMismatchException e) {
+            System.out.println("Error: Please enter a valid integer.");
+        }
+		
         Fuckinggod.close();
 	}
 }
