@@ -25,7 +25,7 @@ public class Lab1_4 {
 	            }
 
 	        } catch (InputMismatchException e) {
-	            System.out.println("Error: Please enter a valid integer.");
+	            System.out.println("Err: Please enter a number only.");
 	        }
 
 	        getscore.close();
