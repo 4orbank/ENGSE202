@@ -6,6 +6,7 @@ public class Lab1_6 {
 	public static void main(String[] args) {
 		Scanner math = new Scanner(System.in);
 		
+	try {
 		System.out.print("Enter your Number : ");
 		int number =  math.nextInt();
 		
@@ -13,6 +14,11 @@ public class Lab1_6 {
 			int result = number * i;
 			System.out.println(number +  "x" + i + "=" + result);
 		}
+		
+	} catch (InputMismatchException e) {
+        System.out.println("Error: Please enter a valid integer.");
+    }
+	
 		math.close();
 		}
 }
