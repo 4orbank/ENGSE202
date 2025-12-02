@@ -8,6 +8,7 @@ public class Lab1_7 {
 	public static void main(String[] args) {
 		Scanner num = new Scanner(System.in);
 		
+	try {
 		System.out.print("Enter N  : ");
 		int n = num.nextInt();
 		
@@ -24,6 +25,11 @@ public class Lab1_7 {
 			}
 			System.out.print("Sum = " + sum);
 		}
+		
+	} catch (InputMismatchException e) {
+        System.out.println("Error: Please enter a valid integer.");
+    }
+	
 		num.close();
 	}
        
