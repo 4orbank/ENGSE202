@@ -5,27 +5,33 @@ import java.util.InputMismatchException;
 
 public class Lab1_9 {
 	public static void main(String[] args) {
-        Scanner holyfuck = new Scanner(System.in);
-        System.out.print("Enter the integers : ");
-        int N = holyfuck.nextInt();
+        Scanner getnum = new Scanner(System.in);
 
-        if (N <= 0) {
-            System.out.println("Err: pls enter a positive integer.");
-        } 
-        else {
-            int[] nums = new int[N];
-            int sum = 0;
+        try {
+            System.out.print("Enter the number of integers : ");
+            int N = getnum.nextInt();
 
-            for (int i = 0; i < N; i++) {
-                System.out.print("Enter number " + (i + 1) + ": ");
-                nums[i] = holyfuck.nextInt();
-                sum += nums[i]; 
+            if (N <= 0) {
+                System.out.println("Err: Input positive integer.");
+            } else {
+                int[] nb = new int[N];
+                int sum = 0;
+
+                for (int i = 0; i < N; i++) {
+                    System.out.print("Enter number " + (i + 1) + ": ");
+                    nb[i] = getnum.nextInt();
+                    sum += nb[i]; 
+                }
+
+                double avg = (double) sum / N;
+
+                System.out.println("Average = " + avg);
             }
 
-            float avg = (float) sum / N;
-
-            System.out.printf("Average = %.2f", avg);
+        } catch (InputMismatchException e) {
+            System.out.println("Err: Please enter a integer.");
         }
-        holyfuck.close();
-	}
+
+        getnum.close();
+    }
 }
